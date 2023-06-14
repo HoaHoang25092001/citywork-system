@@ -1,16 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import GlobalStyles from "./components/GlobalStyles/GlobalStyles";
+import { ConfigProvider } from "antd";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ConfigProvider
+      theme={{
+        token: {
+          fontFamily: `Quicksand !important`,
+        },
+      }}
+    >
+      <GlobalStyles>
+        <App />
+      </GlobalStyles>
+    </ConfigProvider>
   </React.StrictMode>
 );
 
